@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>UC Industries – Prototype</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>UC Industries – Hero Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
-      --primary: #ff7a1a;      /* saffron */
-      --dark: #050505;
-      --light: #ffffff;
-      --gray: #f5f5f5;
-      --text: #222222;
+      --saffron: #ff7a1a;
+      --black: #000000;
+      --white: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #000;
-      color: var(--light);
-      line-height: 1.5;
+      background: #ffffff;
+      color: var(--white);
     }
 
-    a { color: inherit; text-decoration: none; }
-
-    /* NAVBAR */
+    /* TOP BAR WITH LOGO & NAV */
     header {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(0,0,0,0.9);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      backdrop-filter: blur(10px);
+      inset: 0 0 auto 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 50;
     }
 
-    .nav {
+    .top-nav {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0.75rem 1.5rem;
@@ -45,626 +37,155 @@
       justify-content: space-between;
     }
 
-    .logo {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
+      gap: 0.6rem;
     }
 
-    .logo-mark {
-      width: 32px;
-      height: 32px;
+    .brand-mark {
+      width: 44px;
+      height: 44px;
       border-radius: 6px;
-      background: var(--primary);
+      background: var(--saffron);
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      color: #111111;
+      text-transform: uppercase;
     }
 
     nav ul {
-      display: flex;
       list-style: none;
-      gap: 1.5rem;
-      font-size: 0.95rem;
+      display: flex;
+      gap: 1.6rem;
+      font-size: 0.9rem;
     }
 
     nav a {
-      padding-bottom: 0.15rem;
+      text-decoration: none;
+      color: #444444;
+      padding-bottom: 0.2rem;
       border-bottom: 2px solid transparent;
     }
 
     nav a:hover {
-      border-color: var(--primary);
+      border-color: var(--saffron);
+      color: #000000;
     }
 
-    .nav-cta {
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.25);
-      font-size: 0.85rem;
+    /* HERO WRAPPER */
+    .hero-wrapper {
+      margin-top: 64px; /* height of fixed header */
+      background: var(--black);
+      color: var(--white);
+      padding: 3.5rem 0 0;
     }
 
-    .nav-cta:hover {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #000;
-    }
-
-    /* HERO */
-    .hero {
-      margin-top: 64px;
-      min-height: 80vh;
-      background: radial-gradient(circle at 20% -10%, rgba(255,122,26,0.3), transparent 60%),
-                  radial-gradient(circle at 80% 110%, rgba(255,122,26,0.3), transparent 60%),
-                  #000;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      align-items: center;
+    .hero-inner {
       max-width: 1200px;
-      margin-inline: auto;
-      padding: 3rem 1.5rem 4rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 3rem;
+      align-items: center;
     }
 
     .hero-heading {
       font-size: clamp(2rem, 3vw + 1rem, 3.1rem);
       font-weight: 700;
       line-height: 1.1;
-      margin-bottom: 1rem;
     }
 
-    .hero-sub {
-      max-width: 32rem;
-      font-size: 0.98rem;
-      color: #d4d4d4;
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .badge {
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      padding: 0.25rem 0.8rem;
-      font-size: 0.8rem;
-      color: #e5e5e5;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #000;
-      padding: 0.75rem 1.4rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #fff;
-      padding: 0.75rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.25);
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: #b0b0b0;
-    }
-
-    .hero-media {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #111;
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .hero-media::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0,0,0,0.5), transparent 40%, rgba(0,0,0,0.8));
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .hero-heading span {
       display: block;
-      filter: contrast(1.05) saturate(1.1);
+      margin-top: 0.35rem;
     }
 
-    .hero-tag {
-      position: absolute;
-      left: 1.25rem;
-      bottom: 1.25rem;
-      z-index: 2;
-      background: rgba(0,0,0,0.72);
-      padding: 0.6rem 0.9rem;
-      border-radius: 999px;
-      display: flex;
-      gap: 0.45rem;
-      align-items: center;
-      font-size: 0.75rem;
+    .hero-text {
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+      max-width: 24rem;
+      color: #d3d3d3;
     }
 
-    .hero-tag-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--primary);
-      box-shadow: 0 0 0 6px rgba(255,122,26,0.4);
+    /* LARGE IMAGE SECTION */
+    .hero-image-wrap {
+      background: #ffffff;
+      padding-top: 2.2rem;
     }
 
-    /* PRODUCTS */
-    section {
-      padding: 3.5rem 1.5rem;
-      background: #050505;
-    }
-
-    .section-inner {
+    .hero-image-inner {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 1.5rem 3rem;
     }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 1.75rem;
-      gap: 1rem;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    .section-sub {
-      font-size: 0.9rem;
-      color: #b3b3b3;
-      max-width: 28rem;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: #0c0c0c;
-      border-radius: 14px;
-      padding: 1.25rem;
-      border: 1px solid rgba(255,255,255,0.09);
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      font-size: 0.87rem;
-      color: #c4c4c4;
-      margin-bottom: 0.75rem;
-    }
-
-    .card span {
-      font-size: 0.78rem;
-      color: #aaaaaa;
-    }
-
-    /* CLIENT LOGOS */
-    .logo-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.25rem;
-    }
-
-    .logo-pill {
-      padding: 0.5rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      font-size: 0.8rem;
-      color: #dedede;
-      background: #070707;
-    }
-
-    /* ABOUT & CERTIFICATIONS */
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 2rem;
-    }
-
-    .badge-heading {
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      color: #b3b3b3;
-      margin-bottom: 0.4rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.4rem;
-      font-size: 0.88rem;
-      color: #d5d5d5;
-    }
-
-    ul li::before {
-      content: "• ";
-      color: var(--primary);
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 1.75rem 1.5rem 3.5rem;
-      background: #000;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: #aaaaaa;
-      font-size: 0.8rem;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .social {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      font-size: 0.85rem;
-    }
-
-    .social a {
-      padding: 0.25rem 0.5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-
-    /* FIXED CONTACT PANEL */
-    .contact-panel {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 150;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .contact-chip {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.55rem 0.8rem;
-      border-radius: 999px;
-      background: #111;
-      border: 1px solid rgba(255,255,255,0.25);
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-
-    .contact-chip span.icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      background: var(--primary);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: #000;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    .contact-chip:hover {
-      background: #181818;
-    }
-
-    /* MAP EMBED WRAPPER */
-    .map-wrap {
-      margin-top: 1.25rem;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: #111;
-    }
-
-    .map-wrap iframe {
+    .hero-image-inner img {
       width: 100%;
-      border: 0;
-      height: 220px;
+      display: block;
+      object-fit: cover;
     }
 
     @media (max-width: 900px) {
-      .hero {
+      nav ul { display: none; }  /* simple for prototype */
+      .hero-inner {
         grid-template-columns: 1fr;
-      }
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-      nav ul {
-        display: none; /* simple for prototype */
+        text-align: left;
       }
     }
   </style>
 </head>
 <body>
-  <!-- FIXED CONTACT PANEL -->
-  <div class="contact-panel">
-    <a class="contact-chip" href="mailto:info@ucindustries.in">
-      <span class="icon">@</span>
-      <span>Email</span>
-    </a>
-    <a class="contact-chip" href="https://wa.me/911234567890" target="_blank" rel="noopener">
-      <span class="icon">W</span>
-      <span>WhatsApp</span>
-    </a>
-  </div>
 
-  <!-- NAVBAR -->
+  <!-- FIXED TOP BAR -->
   <header>
-    <div class="nav">
-      <div class="logo">
-        <div class="logo-mark"></div>
-        <span>UC INDUSTRIES</span>
+    <div class="top-nav">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">UC INDUSTRIES</div>
       </div>
       <nav>
         <ul>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#clients">Clients</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Capabilities</a></li>
+          <li><a href="#">Quality</a></li>
+          <li><a href="#">Clients</a></li>
+          <li><a href="#">Career</a></li>
+          <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>
-      <a href="#contact" class="nav-cta">Request a Call</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero">
+  <!-- BLACK BAND WITH TEXT -->
+  <section class="hero-wrapper">
+    <div class="hero-inner">
       <div>
-        <h1 class="hero-heading">Precision in Motion,<br/>Excellence in Every Cut.</h1>
-        <p class="hero-sub">
-          UC Industries delivers reliable CNC machining for automotive, aerospace, and industrial applications, focusing on consistent tolerances and timely delivery for every component.
+        <h1 class="hero-heading">
+          Precision in Motion,<span>Excellence in Every Cut.</span>
+        </h1>
+      </div>
+      <div>
+        <p class="hero-text">
+          At UC Industries, we bring CNC machining to life with a focus on consistent accuracy, efficient production, and dependable quality in every component we manufacture.
         </p>
-        <div class="hero-badges">
-          <div class="badge">CNC Turning &amp; Milling</div>
-          <div class="badge">Batch &amp; Prototype Jobs</div>
-          <div class="badge">ISO-ready Processes</div>
-        </div>
-        <div class="hero-cta-row">
-          <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'});">
-            Explore Products
-          </button>
-          <button class="btn-secondary" onclick="document.getElementById('clients').scrollIntoView({behavior:'smooth'});">
-            View Client Industries
-          </button>
-          <span class="hero-note">Built on practical capability, not marketing buzzwords.</span>
-        </div>
-      </div>
-
-      <div class="hero-media">
-        <!-- Replace src with your own actual factory image -->
-        <img src="image.jpg" alt="CNC machining at UC Industries" />
-        <div class="hero-tag">
-          <span class="hero-tag-dot"></span>
-          <span>Live shop-floor footage – actual UC Industries equipment</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section id="products">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="badge-heading">Products</div>
-            <h2 class="section-title">Explore CNC Components</h2>
-          </div>
-          <p class="section-sub">
-            A sample view of common precision-turned parts manufactured for automotive, industrial machinery, and general engineering applications.
-          </p>
-        </div>
-
-        <div class="product-grid">
-          <article class="card">
-            <h3>Automotive Shafts</h3>
-            <p>Turned and milled shafts with controlled concentricity and surface finish for driveline and engine assemblies.</p>
-            <span>Materials: Alloy steels, carbon steels, stainless steels.</span>
-          </article>
-          <article class="card">
-            <h3>Hydraulic Fittings</h3>
-            <p>Connectors and adapters produced to drawing, with leak-tested threads and sealing faces for hydraulic systems.</p>
-            <span>Materials: Mild steel with plating, brass, stainless steel.</span>
-          </article>
-          <article class="card">
-            <h3>Custom Machined Housings</h3>
-            <p>Small- to medium-size housings with critical bores, faces, and threaded features for industrial equipment.</p>
-            <span>Batch size: Prototype to medium-volume production.</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLIENT INDUSTRIES / MACHINERY -->
-    <section id="clients">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="badge-heading">Clients</div>
-            <h2 class="section-title">Industries We Serve</h2>
-          </div>
-          <p class="section-sub">
-            Representative sectors where UC Industries supplies components. Logos are placeholders and should be replaced with actual client approvals.
-          </p>
-        </div>
-
-        <div class="two-col">
-          <div>
-            <h3 style="margin-bottom:0.7rem;">End-use Industries</h3>
-            <div class="logo-row">
-              <span class="logo-pill">Automotive OEMs</span>
-              <span class="logo-pill">Tier‑1 Suppliers</span>
-              <span class="logo-pill">Industrial Machinery</span>
-              <span class="logo-pill">Aerospace Support</span>
-              <span class="logo-pill">General Engineering</span>
-            </div>
-          </div>
-
-          <div>
-            <h3 style="margin-bottom:0.7rem;">Key Installed Machinery</h3>
-            <ul>
-              <li>CNC turning centers – 3 units (actual installed models only).</li>
-              <li>CNC vertical machining centers – 2 units.</li>
-              <li>Conventional lathes and drilling machines.</li>
-              <li>In‑house inspection with vernier, micrometers, and gauges.</li>
-              <!-- Do not list machines that are not present, e.g., ultrasonic washing machine -->
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT & CERTIFICATIONS -->
-    <section id="about">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="badge-heading">About</div>
-            <h2 class="section-title">About UC Industries</h2>
-          </div>
-          <p class="section-sub">
-            Brief, realistic statements help align the website with actual plant capabilities and workforce strength.
-          </p>
-        </div>
-
-        <div class="two-col">
-          <div>
-            <p style="font-size:0.95rem; color:#d5d5d5; margin-bottom:0.9rem;">
-              UC Industries is a precision machining company focused on turned and milled components for demanding applications. The team works with customers from drawing review to final dispatch with an emphasis on reliable quality and delivery.
-            </p>
-            <ul>
-              <li>Approximate workforce: 25–30 employees (update with exact current count).</li>
-              <li>Practical experience in automotive and industrial supply chains.</li>
-              <li>Process documentation aligned with ISO standards.</li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="badge-heading">Certifications</div>
-            <ul>
-              <li>ISO 9001:20XX – Quality Management System (replace with actual certificate details).</li>
-              <li>Customer-specific approvals for selected OEMs/Tier‑1s.</li>
-              <li>Any safety or environmental certifications held by the facility.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT & MAP -->
-    <section id="contact">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="badge-heading">Contact</div>
-            <h2 class="section-title">Visit or Write to Us</h2>
-          </div>
-          <p class="section-sub">
-            A simple contact section with embedded Google Maps and a short form for enquiries.
-          </p>
-        </div>
-
-        <div class="two-col">
-          <div>
-            <h3 style="margin-bottom:0.6rem;">Contact Details</h3>
-            <ul>
-              <li>Email: info@ucindustries.in</li>
-              <li>WhatsApp: +91‑12345‑67890</li>
-              <li>Address: Plot X, Industrial Area, City, State, India.</li>
-            </ul>
-
-            <div class="map-wrap">
-              <!-- Replace src with your actual Google Maps embed link -->
-              <iframe
-                loading="lazy"
-                allowfullscreen
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sUC%20Industries!5e0!3m2!1sen!2sin!4v0000000000000">
-              </iframe>
-            </div>
-          </div>
-
-          <div>
-            <h3 style="margin-bottom:0.6rem;">Quick Enquiry</h3>
-            <form>
-              <div style="margin-bottom:0.6rem;">
-                <label for="name" style="font-size:0.85rem;">Name</label><br />
-                <input id="name" type="text" required
-                       style="width:100%;margin-top:0.2rem;padding:0.5rem 0.6rem;border-radius:6px;border:1px solid #333;background:#050505;color:#fff;" />
-              </div>
-              <div style="margin-bottom:0.6rem;">
-                <label for="email" style="font-size:0.85rem;">Email</label><br />
-                <input id="email" type="email" required
-                       style="width:100%;margin-top:0.2rem;padding:0.5rem 0.6rem;border-radius:6px;border:1px solid #333;background:#050505;color:#fff;" />
-              </div>
-              <div style="margin-bottom:0.6rem;">
-                <label for="msg" style="font-size:0.85rem;">Requirement</label><br />
-                <textarea id="msg" rows="4" required
-                          style="width:100%;margin-top:0.2rem;padding:0.5rem 0.6rem;border-radius:6px;border:1px solid #333;background:#050505;color:#fff;"></textarea>
-              </div>
-              <button type="submit" class="btn-primary">Submit Enquiry</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <span>© 2025 UC Industries. All rights reserved.</span>
-      <div class="social">
-        <span>Connect:</span>
-        <!-- Keep only platforms actually used -->
-        <a href="https://www.linkedin.com/company/uc-industries" target="_blank" rel="noopener">
-          LinkedIn
-        </a>
       </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- BIG IMAGE BELOW (WHITE BACKGROUND) -->
+  <div class="hero-image-wrap">
+    <div class="hero-image-inner">
+      <!-- replace src with your machining image -->
+      <img src="image.jpg" alt="CNC machining hero image">
+    </div>
+  </div>
+
 </body>
 </html>
