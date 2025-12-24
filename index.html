@@ -9,10 +9,10 @@
 
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 		<!-- Bootstrap CSS -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
 
 		<!-- Font Awesome -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" xintegrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 		<!-- Custom Fonts and Theme Styles -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,124 +75,67 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://nextstep.net.in/Uc-industries/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnextstep.net.in%2FUc-industries%2F&#038;format=xml" />
 	<script>document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );</script>
 
-<!-- ==============================================
-     MOBILE OVERLAP & LAYOUT FIXES (MANDATORY)
-     ============================================== -->
 <style>
-/* Reset global overflow for mobile to prevent horizontal scrolling */
-@media (max-width: 991px) {
-    html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        position: relative;
-    }
+/* ===== OUR PRODUCTS SECTION ===== */
 
-    /* FORCE RESET ALL SECTIONS 
-       This removes fixed heights that cause overlapping content */
-    section, 
-    .hero-video-banner,
-    .our-products,
-    .quality-cerification,
-    .capabaility_Sec, 
-    .industry-section,
-    .facilities-section,
-    .client_sec {
-        height: auto !important;
-        min-height: auto !important;
-        overflow: visible !important; /* Allow content to grow naturally */
-        padding-bottom: 50px !important; /* Add spacing between sections */
-        display: block !important;
-        position: relative !important;
-        margin-bottom: 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        z-index: 1 !important; /* Default z-index */
-    }
+.products-section {
+  background: #fff;
+}
 
-    /* Special Fix for Header Video overlap */
-    .hero-video-banner {
-        min-height: 80vh !important;
-        display: flex !important;
-        flex-direction: column;
-    }
-    
-    .hero-video-banner video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-    }
-    
-    .hero-video-banner .container {
-        position: relative;
-        z-index: 2;
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
+.section-title {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
 
-    /* FORCE COLUMNS TO STACK
-       This fixes the side-by-side text collision issues */
-    .row {
-        display: flex !important;
-        flex-direction: column !important; /* Force vertical stacking */
-        flex-wrap: nowrap !important;
-        margin-right: 0 !important;
-        margin-left: 0 !important;
-    }
+.title-underline {
+  width: 40px;
+  height: 3px;
+  background: #f36c21;
+  margin: 10px auto;
+}
 
-    .col-md-6, .col-lg-6, .col-lg-4, .col-lg-5, .col-lg-7, .col-lg-8, .col-md-2, .col-md-4, .col-md-3 {
-        width: 100% !important;
-        max-width: 100% !important;
-        flex: 0 0 100% !important;
-        margin-bottom: 30px !important; /* Spacing between stacked items */
-        padding-right: 15px !important;
-        padding-left: 15px !important;
-    }
-    
-    /* Footer specific row reset to allow grid */
-    footer .row {
-        flex-direction: column !important;
-    }
+.section-subtitle {
+  color: #777;
+  font-size: 15px;
+}
 
-    /* IMAGE FIXES
-       Prevent images from overflowing or being too tall */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-    
-    /* SPECIFIC FIX: Facilities Section Overlap */
-    .facility-card {
-        margin-right: 0 !important; /* Remove desktop negative margin */
-        width: 100% !important;
-        margin-bottom: 20px !important;
-        z-index: 2 !important;
-    }
-    
-    /* SPECIFIC FIX: Accordion */
-    .accordion-button {
-        white-space: normal !important; /* Wrap long text in accordion titles */
-        font-size: 16px !important;
-    }
-    
-    /* TEXT SIZING */
-    h2, .display-5 {
-        font-size: 28px !important;
-        line-height: 1.3 !important;
-        word-wrap: break-word !important;
-    }
-    
-    /* Fix for horizontal scroll in marquee */
-    .marquee-wrapper {
-        width: 100vw !important;
-        overflow: hidden !important;
-    }
+.product-box {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding-bottom: 25px;
+  height: 100%;
+}
+
+.product-box img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+}
+
+.product-box h5 {
+  font-weight: 600;
+  margin: 20px 15px;
+}
+
+.product-btn {
+  border: 1px solid #333;
+  padding: 8px 18px;
+  font-size: 14px;
+  background: transparent;
+  color: #333;
+  transition: 0.3s;
+}
+
+.product-btn:hover {
+  background: #f36c21;
+  color: #fff;
+  border-color: #f36c21;
 }
 </style>
 
+	
 	</head>
 
 	<body class="home wp-singular page-template page-template-frontpage page-template-frontpage-php page page-id-11 wp-embed-responsive wp-theme-twentytwenty singular enable-search-modal missing-post-thumbnail has-no-pagination not-showing-comments show-avatars frontpage footer-top-hidden">
@@ -250,113 +193,38 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 		</div>
 	</div>
 </section>
-<section class="our-products">
-	<div class="container">
-		<div class="main_heading">
-			<h2>Our Products</h2>
-			<p>UC Industries has been at the forefront of precision engineering</p>
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<div class="product-card text-white" style="background-image: url('https://nextstep.net.in/Uc-industries/wp-content/uploads/2025/06/Machine-compinsents.webp');">
-					<div class="card-overlay">
-						<h5>Turned / Machined Components</h5>
-						<a href="#" class="btn know-more-btn">
+<section class="products-section py-5">
+  <div class="container text-center">
+    <h2 class="section-title">OUR PRODUCTS</h2>
+    <div class="title-underline"></div>
+    <p class="section-subtitle">Specialized precision engineering components.</p>
 
-							<span class="icon_text">
-								<svg width="53" height="33" viewBox="0 0 53 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd" d="M0.513412 5.19041C0.182887 5.55766 0 6.03426 0 6.52834V26.3086C0 26.8027 0.182887 27.2793 0.513411 27.6465L4.58892 32.1749C4.9682 32.5963 5.50853 32.837 6.07551 32.837H16.4185H26.7614C27.3284 32.837 27.8688 32.5963 28.248 32.1749L32.3235 27.6465C32.6541 27.2793 32.837 26.8027 32.837 26.3086V16.4185V6.23696C32.837 5.74488 32.6556 5.27008 32.3274 4.90337L28.5365 0.66641C28.1571 0.242364 27.615 0 27.046 0H13.9701H6.07551C5.50853 0 4.9682 0.240643 4.58892 0.662071L0.513412 5.19041ZM6.20703 3.6087C5.10246 3.6087 4.20703 4.50413 4.20703 5.6087V27.6087C4.20703 28.7133 5.10246 29.6087 6.20703 29.6087H27.207C28.3116 29.6087 29.207 28.7133 29.207 27.6087V5.6087C29.207 4.50413 28.3116 3.6087 27.207 3.6087H6.20703Z" fill="white"/>
-									<path d="M41.7007 5.59055C41.4802 5.34646 41.1568 5.1995 40.8119 5.18582C40.4669 5.17088 40.1314 5.29043 39.8865 5.51585C39.643 5.74001 39.5131 6.04887 39.528 6.36643C39.5442 6.68399 39.7038 6.98164 39.969 7.18462L48.8045 15.3279H19.6021C18.9473 15.3591 18.4346 15.8572 18.4346 16.4612C18.4346 17.064 18.9473 17.5621 19.6021 17.5945H48.8045L39.9555 25.7266C39.4928 26.1725 39.4928 26.8749 39.9555 27.3207C40.1841 27.5324 40.4966 27.652 40.8213 27.652C41.146 27.652 41.4571 27.5324 41.6871 27.3207L52.6318 17.2457L52.6305 17.247C52.8659 17.0377 52.9998 16.7501 52.9998 16.4499C52.9998 16.1486 52.8659 15.8609 52.6305 15.6529L41.7007 5.59055Z" fill="white"/>
-								</svg>
-							</span>
-							<span class="text">Explore Category</span>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="product-card text-white" style="background-image: url('https://nextstep.net.in/Uc-industries/wp-content/uploads/2025/06/Casting-and-Machined-components.webp');">
-					<div class="card-overlay">
-						<h5>Casting and Machined<br>components</h5>
-						<a href="#" class="btn know-more-btn">
+    <div class="row g-4 mt-4">
+      <div class="col-md-4">
+        <div class="product-box">
+          <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2025/06/Machine-compinsents.webp">
+          <h5>Turned & Machined Components</h5>
+          <a href="#" class="btn product-btn">View Products</a>
+        </div>
+      </div>
 
-							<span class="icon_text">
-								<svg width="53" height="33" viewBox="0 0 53 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd" d="M0.513412 5.19041C0.182887 5.55766 0 6.03426 0 6.52834V26.3086C0 26.8027 0.182887 27.2793 0.513411 27.6465L4.58892 32.1749C4.9682 32.5963 5.50853 32.837 6.07551 32.837H16.4185H26.7614C27.3284 32.837 27.8688 32.5963 28.248 32.1749L32.3235 27.6465C32.6541 27.2793 32.837 26.8027 32.837 26.3086V16.4185V6.23696C32.837 5.74488 32.6556 5.27008 32.3274 4.90337L28.5365 0.66641C28.1571 0.242364 27.615 0 27.046 0H13.9701H6.07551C5.50853 0 4.9682 0.240643 4.58892 0.662071L0.513412 5.19041ZM6.20703 3.6087C5.10246 3.6087 4.20703 4.50413 4.20703 5.6087V27.6087C4.20703 28.7133 5.10246 29.6087 6.20703 29.6087H27.207C28.3116 29.6087 29.207 28.7133 29.207 27.6087V5.6087C29.207 4.50413 28.3116 3.6087 27.207 3.6087H6.20703Z" fill="white"/>
-									<path d="M41.7007 5.59055C41.4802 5.34646 41.1568 5.1995 40.8119 5.18582C40.4669 5.17088 40.1314 5.29043 39.8865 5.51585C39.643 5.74001 39.5131 6.04887 39.528 6.36643C39.5442 6.68399 39.7038 6.98164 39.969 7.18462L48.8045 15.3279H19.6021C18.9473 15.3591 18.4346 15.8572 18.4346 16.4612C18.4346 17.064 18.9473 17.5621 19.6021 17.5945H48.8045L39.9555 25.7266C39.4928 26.1725 39.4928 26.8749 39.9555 27.3207C40.1841 27.5324 40.4966 27.652 40.8213 27.652C41.146 27.652 41.4571 27.5324 41.6871 27.3207L52.6318 17.2457L52.6305 17.247C52.8659 17.0377 52.9998 16.7501 52.9998 16.4499C52.9998 16.1486 52.8659 15.8609 52.6305 15.6529L41.7007 5.59055Z" fill="white"/>
-								</svg>
-							</span>
-							<span class="text">Explore Category</span>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="product-card text-white" style="background-image: url('https://nextstep.net.in/Uc-industries/wp-content/uploads/2025/06/Forged-and-machine-componmsent.webp');">
-					<div class="card-overlay">
-						<h5>Forged and Machined<br>components</h5>
-						<a href="#" class="btn know-more-btn">
+      <div class="col-md-4">
+        <div class="product-box">
+          <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2025/06/Casting-and-Machined-components.webp">
+          <h5>Casting & Machined Components</h5>
+          <a href="#" class="btn product-btn">View Products</a>
+        </div>
+      </div>
 
-							<span class="icon_text">
-								<svg width="53" height="33" viewBox="0 0 53 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd" d="M0.513412 5.19041C0.182887 5.55766 0 6.03426 0 6.52834V26.3086C0 26.8027 0.182887 27.2793 0.513411 27.6465L4.58892 32.1749C4.9682 32.5963 5.50853 32.837 6.07551 32.837H16.4185H26.7614C27.3284 32.837 27.8688 32.5963 28.248 32.1749L32.3235 27.6465C32.6541 27.2793 32.837 26.8027 32.837 26.3086V16.4185V6.23696C32.837 5.74488 32.6556 5.27008 32.3274 4.90337L28.5365 0.66641C28.1571 0.242364 27.615 0 27.046 0H13.9701H6.07551C5.50853 0 4.9682 0.240643 4.58892 0.662071L0.513412 5.19041ZM6.20703 3.6087C5.10246 3.6087 4.20703 4.50413 4.20703 5.6087V27.6087C4.20703 28.7133 5.10246 29.6087 6.20703 29.6087H27.207C28.3116 29.6087 29.207 28.7133 29.207 27.6087V5.6087C29.207 4.50413 28.3116 3.6087 27.207 3.6087H6.20703Z" fill="white"/>
-									<path d="M41.7007 5.59055C41.4802 5.34646 41.1568 5.1995 40.8119 5.18582C40.4669 5.17088 40.1314 5.29043 39.8865 5.51585C39.643 5.74001 39.5131 6.04887 39.528 6.36643C39.5442 6.68399 39.7038 6.98164 39.969 7.18462L48.8045 15.3279H19.6021C18.9473 15.3591 18.4346 15.8572 18.4346 16.4612C18.4346 17.064 18.9473 17.5621 19.6021 17.5945H48.8045L39.9555 25.7266C39.4928 26.1725 39.4928 26.8749 39.9555 27.3207C40.1841 27.5324 40.4966 27.652 40.8213 27.652C41.146 27.652 41.4571 27.5324 41.6871 27.3207L52.6318 17.2457L52.6305 17.247C52.8659 17.0377 52.9998 16.7501 52.9998 16.4499C52.9998 16.1486 52.8659 15.8609 52.6305 15.6529L41.7007 5.59055Z" fill="white"/>
-								</svg>
-							</span>
-							<span class="text">Explore Category</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="about-us-banner position-relative text-white py-5">
-	<div class="bg-overlay"></div>
-	<div class="container position-relative z-2 h-100">
-		<ul>
-			<li>
-				<div class="about_box">
-					<h2>About us</h2>
-					<p>UC Industries has been at the forefront of precision engineering, specializing in CNC machining and high-accuracy components.</p>
-					<a href="#" class="btn know-more-btn">
-
-						<span class="icon_text">
-							<svg width="53" height="33" viewBox="0 0 53 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.513412 5.19041C0.182887 5.55766 0 6.03426 0 6.52834V26.3086C0 26.8027 0.182887 27.2793 0.513411 27.6465L4.58892 32.1749C4.9682 32.5963 5.50853 32.837 6.07551 32.837H16.4185H26.7614C27.3284 32.837 27.8688 32.5963 28.248 32.1749L32.3235 27.6465C32.6541 27.2793 32.837 26.8027 32.837 26.3086V16.4185V6.23696C32.837 5.74488 32.6556 5.27008 32.3274 4.90337L28.5365 0.66641C28.1571 0.242364 27.615 0 27.046 0H13.9701H6.07551C5.50853 0 4.9682 0.240643 4.58892 0.662071L0.513412 5.19041ZM6.20703 3.6087C5.10246 3.6087 4.20703 4.50413 4.20703 5.6087V27.6087C4.20703 28.7133 5.10246 29.6087 6.20703 29.6087H27.207C28.3116 29.6087 29.207 28.7133 29.207 27.6087V5.6087C29.207 4.50413 28.3116 3.6087 27.207 3.6087H6.20703Z" fill="white"/>
-								<path d="M41.7007 5.59055C41.4802 5.34646 41.1568 5.1995 40.8119 5.18582C40.4669 5.17088 40.1314 5.29043 39.8865 5.51585C39.643 5.74001 39.5131 6.04887 39.528 6.36643C39.5442 6.68399 39.7038 6.98164 39.969 7.18462L48.8045 15.3279H19.6021C18.9473 15.3591 18.4346 15.8572 18.4346 16.4612C18.4346 17.064 18.9473 17.5621 19.6021 17.5945H48.8045L39.9555 25.7266C39.4928 26.1725 39.4928 26.8749 39.9555 27.3207C40.1841 27.5324 40.4966 27.652 40.8213 27.652C41.146 27.652 41.4571 27.5324 41.6871 27.3207L52.6318 17.2457L52.6305 17.247C52.8659 17.0377 52.9998 16.7501 52.9998 16.4499C52.9998 16.1486 52.8659 15.8609 52.6305 15.6529L41.7007 5.59055Z" fill="white"/>
-							</svg>
-						</span>
-						<span class="text">Explore Our Journey</span>
-					</a>
-				</div>
-			</li>
-			<li>
-				<div class="About_counter_second_child">
-					<div class="counter_content">
-						<h1 class="counter" data-target="200">0</h1>
-					<p>Manpower</p>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="About_counter_third_child">
-					<div class="counter_content">
-					<h1 class="counter" data-target="250">0</h1>
-					<p>Skilled Workers</p>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="About_counter_fourth_child">
-					<div class="counter_content">
-					<h1 class="counter" data-target="250">0</h1>
-					<p>Manufacturing Plants</p>
-				</div>
-				</div>
-			</li>
-		</ul>
-	</div>
+      <div class="col-md-4">
+        <div class="product-box">
+          <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2025/06/Forged-and-machine-componmsent.webp">
+          <h5>Forged & Machined Components</h5>
+          <a href="#" class="btn product-btn">View Products</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="quality-cerification">
@@ -688,6 +556,7 @@ function switchTab(tabName) {
 <style>
 .fade-in { animation: simpleFade 0.5s; }
 @keyframes simpleFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
 </style>
 
 <section class="py-4 bg-light border-bottom">
