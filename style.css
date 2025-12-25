@@ -1,0 +1,110 @@
+/* =========================================
+   1. CORE "VITA TRAVELS" SCROLL EFFECTS
+   ========================================= */
+
+/* The "Mask" creates the invisible container */
+.effect-mask {
+    display: block;
+    position: relative;
+    overflow: hidden; /* This is the secret: hides text until it slides up */
+    padding-bottom: 5px; /* Prevents cutting off letters like 'g' or 'y' */
+}
+
+/* The "Content" starts hidden below the mask */
+.effect-text {
+    display: block;
+    transform: translateY(110%); /* Pushed down 110% */
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease; /* Premium easing */
+    will-change: transform;
+}
+
+/* The "Trigger" class added by Javascript */
+.effect-visible .effect-text {
+    transform: translateY(0); /* Slides up to normal */
+    opacity: 1;
+}
+
+/* Stagger Delays for multi-line text */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* =========================================
+   2. YOUR ORIGINAL CUSTOM STYLES
+   ========================================= */
+
+/* Products Section */
+.products-section { background: #fff; }
+.section-title { font-weight: 700; letter-spacing: 2px; }
+.title-underline { width: 40px; height: 3px; background: #f36c21; margin: 10px auto; }
+.section-subtitle { color: #777; font-size: 15px; }
+
+.product-box {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    padding-bottom: 25px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Added hover effect to products for interaction */
+.product-box:hover { transform: translateY(-5px); }
+
+.product-box img { width: 100%; height: 230px; object-fit: cover; border-radius: 6px 6px 0 0; }
+.product-box h5 { font-weight: 600; margin: 20px 15px; }
+
+.product-btn {
+    border: 1px solid #333;
+    padding: 8px 18px;
+    font-size: 14px;
+    background: transparent;
+    color: #333;
+    transition: 0.3s;
+}
+
+.product-btn:hover { background: #f36c21; color: #fff; border-color: #f36c21; }
+
+/* Facilities & Utilities */
+.fade-in { animation: simpleFade 0.5s; }
+@keyframes simpleFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.text-orange { color: #F6771D !important; }
+.bg-orange { background-color: #F6771D !important; }
+.btn-orange { background-color: #F6771D; border: none; transition: 0.3s; }
+.btn-orange:hover { background-color: #d6600e; }
+
+/* Overlap Logic for Desktop */
+@media (min-width: 992px) {
+    .facility-card {
+        margin-right: -100px;
+        z-index: 10;
+        border-radius: 4px;
+    }
+    .z-2 { z-index: 2; }
+}
+
+.facility-list li { font-size: 0.95rem; color: #555; display: flex; align-items: center; }
+.facility-list i { font-size: 1.1rem; }
+.tab-box { transition: 0.3s; position: relative; }
+.tab-box:hover { filter: brightness(0.95); }
+.cursor-pointer { cursor: pointer; }
+.ls-2 { letter-spacing: 2px; }
+.uppercase { text-transform: uppercase; }
+
+/* Marquee Styles */
+.marquee-wrapper { overflow: hidden; white-space: nowrap; position: relative; width: 100%; }
+.marquee-track { display: flex; width: calc(180px * 18); animation: scrollLoop 30s linear infinite; }
+.marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
+.logo-box { width: 180px; flex-shrink: 0; padding: 0 20px; display: flex; justify-content: center; align-items: center; }
+.logo-box img { max-width: 120px; max-height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
+.logo-box:hover img { filter: grayscale(0%); opacity: 1; }
+@keyframes scrollLoop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* Client Section Static */
+.category-header { display: inline-block; border-bottom: 3px solid #F6771D; padding-bottom: 10px; margin-bottom: 30px; font-weight: 600; color: #333; }
+.static-logo { width: 160px; height: 80px; display: flex; align-items: center; justify-content: center; }
+.static-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+@media (min-width: 768px) { .vertical-divider { border-right: 1px solid #e0e0e0; } }
