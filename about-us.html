@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+
+<html lang="en-US" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://nextstep.net.in/Uc-industries/wp-content/themes/twentytwenty/assets/css/style.css">
+    <link rel="stylesheet" href="https://nextstep.net.in/Uc-industries/wp-content/themes/twentytwenty/assets/css/header.css">
+    <link rel="stylesheet" href="https://nextstep.net.in/Uc-industries/wp-content/themes/twentytwenty/assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <title>About Us - UC Industries</title>
+    <meta name='robots' content='noindex, nofollow' />
+    <link rel='dns-prefetch' href='//translate.google.com' />
+
+    <style id='wp-emoji-styles-inline-css'>
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+
+    <style>
+        /* About Page Specific Styles */
+        .about-hero-section {
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-hero-section h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-hero-section p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .breadcrumb-item a {
+            color: #ccc !important;
+            text-decoration: none !important;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-item a:hover {
+            color: #ff6b35 !important;
+        }
+
+        .breadcrumb-item.active {
+            color: #fff;
+        }
+
+        /* Mission, Vision, Values Section - Image & Text Layout */
+        .mvv-section {
+            padding: 0;
+            background: white;
+        }
+
+        .mvv-row {
+            padding: 80px 0;
+            min-height: 500px;
+        }
+
+        .mvv-mission-row {
+            background: white;
+        }
+
+        .mvv-vision-row {
+            background: #f9f9f9;
+        }
+
+        /* Image Column */
+        .mvv-image-col {
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Feature Icon Boxes */
+        .mvv-feature-box {
+            width: 280px;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            font-size: 6rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .mvv-feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            z-index: -1;
+        }
+
+        .mvv-feature-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            opacity: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent);
+            transition: opacity 0.4s ease;
+        }
+
+        .mvv-feature-box:hover::after {
+            opacity: 1;
+        }
+
+        .mvv-feature-mission {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 50%, #ff9966 100%);
+            color: white;
+            position: relative;
+        }
+
+        .mvv-feature-mission:hover {
+            transform: scale(1.08) rotate(-8deg);
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.4);
+        }
+
+        .mvv-feature-vision {
+            background: linear-gradient(135deg, #17a2b8 0%, #20c997 50%, #2dd4c0 100%);
+            color: white;
+        }
+
+        .mvv-feature-vision:hover {
+            transform: scale(1.08) rotate(8deg);
+            box-shadow: 0 20px 50px rgba(23, 162, 184, 0.4);
+        }
+
+        /* Text Column */
+        .mvv-text-col {
+            padding: 40px;
+        }
+
+        .mvv-text-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .mvv-content {
+            max-width: 550px;
+        }
+
+        .mvv-header-inline {
+            margin-bottom: 30px;
+        }
+
+        .mvv-header-inline h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0 0 20px 0;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .mvv-header-inline h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #ff6b35;
+        }
+
+        .mvv-content p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .mvv-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Values Section */
+        .mvv-values-row {
+            padding: 80px 0;
+            background: #f5f5f5;
+        }
+
+        .mvv-values-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .mvv-values-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .mvv-values-header h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .mvv-guide {
+            color: #ff6b35;
+        }
+
+        .mvv-values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .mvv-value-item {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: left;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            padding-top: 60px;
+            border-left: 4px solid transparent;
+            overflow: hidden;
+        }
+
+        .mvv-value-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            border-left-color: #ff6b35;
+        }
+
+        .mvv-value-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b35, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mvv-value-item:hover::before {
+            opacity: 1;
+        }
+
+        .mvv-value-number {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ff6b35;
+            opacity: 0.1;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -2px;
+        }
+
+        .mvv-value-icon-box {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 107, 53, 0.05));
+            border: 2px solid rgba(255, 107, 53, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #ff6b35;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .mvv-value-item:hover .mvv-value-icon-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 107, 53, 0.1));
+            border-color: #ff6b35;
+            transform: translateY(-3px);
+        }
+
+        .mvv-value-item h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            margin-top: 0;
+        }
+
+        .mvv-value-item p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #999;
+            margin: 0;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-choose-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 107, 53, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .why-choose-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-choose-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .why-choose-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .why-choose-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-choose-card {
+            background: white;
+            padding: 45px 35px;
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+
+        .why-choose-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .why-choose-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
+            border-color: #ff6b35;
+        }
+
+        .why-choose-card:hover::before {
+            opacity: 1;
+        }
+
+        .why-choose-number {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ff6b35;
+            opacity: 0.08;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -3px;
+        }
+
+        .why-choose-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+        }
+
+        .why-choose-card:hover .why-choose-icon {
+            transform: scale(1.15) rotate(-10deg);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .why-choose-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .why-choose-card:hover h3 {
+            color: #ff6b35;
+        }
+
+        .why-choose-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .why-choose-accent {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 107, 53, 0.05);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0a1428 0%, #1a2a3a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CTA Images */
+        .cta-images {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-image-card {
+            position: absolute;
+            width: 180px;
+            height: 220px;
+            background: white;
+            border: 8px solid white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .cta-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cta-card-1 {
+            transform: rotate(-15deg) translateY(20px);
+            z-index: 3;
+            left: 0;
+        }
+
+        .cta-card-1:hover {
+            transform: rotate(-15deg) translateY(10px);
+        }
+
+        .cta-card-2 {
+            z-index: 4;
+            transform: translateY(0) scale(1.05);
+        }
+
+        .cta-card-2:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .cta-card-3 {
+            transform: rotate(15deg) translateY(20px);
+            z-index: 3;
+            right: 0;
+        }
+
+        .cta-card-3:hover {
+            transform: rotate(15deg) translateY(10px);
+        }
+
+        /* CTA Content */
+        .cta-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        .cta-highlight {
+            color: #ff6b35;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0a1428;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+        }
+
+        .cta-button:hover {
+            background: #ff6b35;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Journey Timeline */
+        .journey-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #ff6b35 0%, #ffb84d 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            margin-right: 0;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #ff6b35;
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 0 0 4px #ff6b35;
+        }
+
+        .timeline-content {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 3px solid #ff6b35;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Leadership Team */
+        .team-section {
+            padding: 80px 0;
+            background: #f5f5f5;
+        }
+
+        .team-card {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-image {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #ff6b35;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-card h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .team-card p {
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .team-bio {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Certifications & Awards Section - Dynamic Tabbed Timeline */
+        .certifications-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f0f9fb 0%, #f5fafb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certifications-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .timeline-tabs-header {
+            display: flex;
+            align-items: center;
+            background: #ff6b35;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
+        }
+
+        .timeline-tab {
+            flex: 1;
+            padding: 18px 30px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #ff6b35;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-tab.active {
+            background: #e55a24;
+            box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-tab:hover {
+            background: #f55c2d;
+        }
+
+        .timeline-tab-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-wrapper {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .timeline-left {
+            flex: 0 0 280px;
+            position: relative;
+        }
+
+        .timeline-year-display {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: #ff6b35;
+            line-height: 1;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out forwards;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -3px;
+        }
+
+        .timeline-vertical-line {
+            width: 3px;
+            height: 350px;
+            background: #ff6b35;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.4;
+        }
+
+        .timeline-years {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-left: 20px;
+        }
+
+        .timeline-year-item {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+            opacity: 0.6;
+        }
+
+        .timeline-year-item::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border: 2px solid #ff6b35;
+            border-radius: 50%;
+            left: -29px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-year-item:hover {
+            color: #ff6b35;
+            opacity: 1;
+            transform: translateX(8px);
+        }
+
+        .timeline-year-item:hover::before {
+            background: #ff6b35;
+            box-shadow: 0 0 12px rgba(255, 107, 53, 0.4);
+        }
+
+        .timeline-year-item.active {
+            color: #ff6b35;
+            opacity: 1;
+            font-weight: 700;
+        }
+
+        .timeline-year-item.active::before {
+            background: #ff6b35;
+            width: 14px;
+            height: 14px;
+            left: -32px;
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+        }
+
+        .timeline-right {
+            flex: 1;
+            position: relative;
+        }
+
+        .timeline-content-wrapper {
+            min-height: 300px;
+            position: relative;
+        }
+
+        .timeline-content-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+        }
+
+        .timeline-content-item.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        .timeline-item-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .timeline-content-item.active .timeline-item-title {
+            color: #ff6b35;
+        }
+
+        .timeline-item-description {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .highlight-box {
+            padding: 20px;
+            background: white;
+            border-left: 4px solid #ff6b35;
+            border-radius: 4px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.12);
+        }
+
+        .highlight-box h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Quality & Capabilities Section */
+        .quality-capabilities-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f9f9f9 0%, #fafafa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quality-capabilities-section::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 107, 53, 0.03);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .quality-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quality-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .quality-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .quality-highlight {
+            color: #ff6b35;
+        }
+
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quality-item {
+            padding: 45px;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);\n            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quality-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .quality-item:hover {\n            background: white;
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.12);
+            border-color: #ff6b35;
+        }
+
+        .quality-item:hover::before {
+            opacity: 1;
+        }
+
+        .quality-icon-box {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 107, 53, 0.08));
+            border: 2px solid rgba(255, 107, 53, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #ff6b35;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .quality-item:hover .quality-icon-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 107, 53, 0.12));
+            border-color: #ff6b35;
+            transform: scale(1.12) rotate(-10deg);
+        }
+
+        .quality-item h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            margin-top: 0;
+            transition: color 0.3s ease;
+        }
+
+        .quality-item:hover h3 {
+            color: #ff6b35;
+        }
+
+        .quality-item p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #666;
+            margin: 0;
+        }
+
+        /* History, Milestones & Awards Section */
+        .history-awards-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .history-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .history-header h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .history-highlight {
+            color: #ff6b35;
+        }
+
+        .history-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Combined Timeline */
+        .combined-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .combined-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #ff6b35 0%, #ff8555 50%, #ff6b35 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 50%;
+            text-align: left;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 0;
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 0;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .timeline-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .timeline-milestone .timeline-icon {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+        }
+
+        .timeline-award .timeline-icon {
+            background: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0 0 12px 0;
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #666;
+            margin: 0 0 15px 0;
+        }
+
+        .timeline-year {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ff6b35;
+        }
+
+        .timeline-award .timeline-year {
+            color: #17a2b8;
+        }
+
+        /* Marker on timeline */
+        .timeline-item:nth-child(odd) .timeline-content::after,
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border: 3px solid #ff6b35;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -35px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -35px;
+        }
+
+        .timeline-award .timeline-content::after {
+            border-color: #17a2b8;
+        }
+
+        /* Main Heading */
+        .main_heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .main_heading h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .main_heading p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .orange-color {
+            color: #ff6b35;
+        }
+
+        /* Who We Are Section */
+        .who-we-are-section {
+            padding: 80px 0;
+            background: white;
+            padding-top: 60px;
+        }
+
+        .who-we-are-section h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .who-we-are-subtitle {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .who-we-are-content {
+            margin-bottom: 40px;
+            max-width: 900px;
+        }
+
+        .who-we-are-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #ff6b35;
+            color: white;
+            padding: 14px 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 2px solid #ff6b35;
+        }
+
+        .download-btn:hover {
+            background-color: transparent;
+            color: #ff6b35;
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            opacity: 0.95;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .cta-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .cta-images {
+                width: 300px;
+                height: 250px;
+            }
+
+            .cta-image-card {
+                width: 150px;
+                height: 180px;
+            }
+
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .breadcrumb {
+                font-size: 0.9rem;
+            }
+
+            .why-choose-header h2 {
+                font-size: 2rem;
+            }
+
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .why-choose-card {
+                padding: 35px 25px;
+            }
+
+            .quality-header h2 {
+                font-size: 2rem;
+            }
+
+            .quality-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .quality-item {
+                padding: 35px 25px;
+            }
+
+            .timeline-tabs-header {
+                flex-direction: column;
+                margin-bottom: 40px;
+            }
+
+            .timeline-tab {
+                padding: 14px 20px;
+                font-size: 0.9rem;
+            }
+
+            .timeline-wrapper {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .timeline-left {
+                flex: 1;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .timeline-year-display {
+                font-size: 3rem;
+            }
+
+            .timeline-vertical-line {
+                height: 200px;
+                position: relative;
+                left: 50%;
+                margin-left: -1.5px;
+            }
+
+            .timeline-years {
+                padding-left: 0;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .timeline-year-item {
+                padding: 8px 16px;
+                border: 2px solid #17a2b8;
+                border-radius: 20px;
+                font-size: 0.9rem;
+            }
+
+            .timeline-year-item::before {
+                display: none;
+            }
+
+            .timeline-year-item.active {
+                background: #17a2b8;
+                color: white;
+            }
+
+            .certifications-timeline {
+                padding: 0 20px;
+                gap: 40px;
+            }
+
+            .cert-timeline-item {
+                padding: 30px 25px;
+                margin-left: 30px;
+            }
+
+            .cert-timeline-item::before {
+                left: -55px;
+                top: 35px;
+            }
+
+            .certifications-header h2 {
+                font-size: 2rem;
+            }
+
+            .history-item,
+            .award-item {
+                gap: 15px;
+            }
+
+            .history-year,
+            .award-year {
+                min-width: 80px;
+                font-size: 1.2rem;
+            }
+
+            .history-text,
+            .award-text {
+                padding: 15px;
+            }
+
+            .history-text h4,
+            .award-text h4 {
+                font-size: 1rem;
+            }
+
+            .combined-timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                margin-bottom: 30px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                text-align: left;
+                padding-left: 100px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -65px;
+            }
+
+            .timeline-content {
+                max-width: 100%;
+                padding: 20px;
+            }
+
+            .history-header h2 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stat-card {
+                padding: 30px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            .mvv-row {
+                padding: 50px 0;
+                min-height: auto;
+            }
+
+            .mvv-image-col {
+                margin-bottom: 40px;
+            }
+
+            .mvv-feature-box {
+                width: 220px;
+                height: 220px;
+                font-size: 4.5rem;
+                border-radius: 12px;
+            }
+
+            .mvv-header-inline h2 {
+                font-size: 2rem;
+            }
+
+            .mvv-accent-line {
+                display: none;
+            }
+
+            .mvv-text-left {
+                display: block;
+            }
+
+            .mvv-values-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .mvv-values-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .mvv-value-item {
+                padding: 20px;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-dot {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 40px;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .timeline-content {
+                border-left: 3px solid #ff6b35;
+            }
+
+            .team-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .main_heading h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .mvv-values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mvv-row {
+                padding: 30px 0;
+            }
+
+            .mvv-header-inline h2 {
+                font-size: 1.6rem;
+            }
+
+            .mvv-content p {
+                font-size: 0.85rem;
+            }
+
+            .cta-images {
+                margin-bottom: 30px;
+            }
+
+            .cta-image-card {
+                width: 120px;
+                height: 150px;
+            }
+
+            .cta-content h2 {
+                font-size: 1.5rem;
+                line-height: 1.4;
+            }
+        }
+    </style>
+</head>
+
+<body class="about-page wp-embed-responsive">
+    <a class="skip-link screen-reader-text" href="#site-content">Skip to the content</a>
+
+    <!-- Header Navigation -->
+    <header class="sticky_header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://nextstep.net.in/Uc-industries/">
+                    <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2026/01/UC-Industries-logo.webp" alt="UC Industries White Logo" class="logo-white" height="58">
+                    <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2025/06/UC-Industries-Company-Profile-v1-1.png" alt="UC Industries Black Logo" class="logo-dark" height="58">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="https://nextstep.net.in/Uc-industries/about-us-3/">About</a></li>
+                    <li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://nextstep.net.in/Uc-industries/quality-assurance-2/">Quality Assurance</a></li>
+                    <li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="https://nextstep.net.in/Uc-industries/industries-we-serve/">Industries we serve</a></li>
+                    <li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="https://nextstep.net.in/Uc-industries/product/">Product</a></li>
+                    <li id="menu-item-89" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89"><a href="https://nextstep.net.in/Uc-industries/esg/">ESG</a></li>
+                    <li id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="https://nextstep.net.in/Uc-industries/contact-us/">Contact us</a></li>
+                </div>
+
+                <div class="lang-translate">
+                    <div id="flags" class="size18">
+                        <ul id="sortable" class="ui-sortable" style="float:left">
+                            <li id='Dutch'><a href='#' title='Dutch' class='nturl notranslate nl flag Dutch'></a></li>
+                            <li id='English'><a href='#' title='English' class='nturl notranslate en flag united-states'></a></li>
+                            <li id='Japanese'><a href='#' title='Japanese' class='nturl notranslate ja flag Japanese'></a></li>
+                        </ul>
+                    </div>
+                    <div id="google_language_translator" class="default-language-en"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Breadcrumb -->
+    <section class="about-hero-section" style="background-image: url('https://www.kokoku-intech.com/dcms_media/image/top-p01.jpg'); background-size: cover; background-position: center; position: relative; padding: 100px 0;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%); z-index: 1;"></div>
+        
+        <div class="container position-relative" style="z-index: 2;">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="breadcrumb" style="margin-bottom: 40px;">
+                <ol class="breadcrumb" style="background: transparent; padding: 0;">
+                    <li class="breadcrumb-item"><a href="index.html" style="color: #ccc; text-decoration: none;">Home</a></li>
+                    <li class="breadcrumb-item active" style="color: #fff;">About Us</li>
+                </ol>
+            </nav>
+
+            <!-- Hero Heading -->
+            <div style="position: relative;">
+                <h1 style="font-size: 4rem; font-weight: 700; color: #fff; margin-bottom: 20px; letter-spacing: 2px;">ABOUT US</h1>
+                <div style="width: 80px; height: 4px; background: #ff6b35; margin-bottom: 30px;"></div>
+                <p style="font-size: 1.1rem; color: #ccc; max-width: 600px; line-height: 1.6;">Over four decades of precision engineering excellence, delivering world-class CNC machined components to industries worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="who-we-are-section">
+        <div class="container">
+            <h2>Who We Are</h2>
+            <p class="who-we-are-subtitle">PRECISION ENGINEERING FOR CRITICAL INDUSTRIES</p>
+            
+            <div class="who-we-are-content">
+                <p>UC Industries is a leader in precision CNC manufacturing with over 40 years of expertise. We specialize in delivering high-performance machined components that power the automotive, railway, and aerospace industries worldwide. Our commitment to excellence is reflected in every component we manufacture, backed by IATF 16949 certification and an unwavering dedication to quality, innovation, and customer satisfaction.</p>
+                <p>With two state-of-the-art facilities, 120+ skilled professionals, and 35+ advanced CNC machines, we combine cutting-edge technology with traditional craftsmanship. We understand that our clients depend on us for precision—which is why we maintain micron-level accuracy and 100% traceability on every batch. Our mission is not just to meet expectations but to exceed them, delivering components that perform flawlessly in the most demanding applications.</p>
+            </div>
+
+            <a href="#" class="download-btn">DOWNLOAD COMPANY PROFILE</a>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container-fluid">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Customer Retention Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.8%</div>
+                    <div class="stat-label">Quality Accuracy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Values Section - Image & Text Layout -->
+    <section class="mvv-section">
+        <div class="container-fluid">
+            <!-- Mission Section -->
+            <div class="row align-items-center mvv-row mvv-mission-row">
+                <!-- Icon Box Left -->
+                <div class="col-lg-6 mvv-image-col">
+                    <div class="mvv-feature-box mvv-feature-mission">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="col-lg-6 mvv-text-col">
+                    <div class="mvv-content">
+                        <div class="mvv-header-inline">
+                            <h2>MISSION</h2>
+                        </div>
+                        <p>To deliver precision-engineered components that exceed customer expectations while maintaining the highest standards of quality, safety, and sustainability. We engineer reliability in every batch we deliver, ensuring our clients receive components that perform flawlessly in the most demanding applications.</p>
+                        <p>Our commitment extends beyond manufacturing—we partner with our customers to solve their toughest engineering challenges through innovation, precision, and unwavering dedication to excellence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision Section -->
+            <div class="row align-items-center mvv-row mvv-vision-row">
+                <!-- Text Left -->
+                <div class="col-lg-6 mvv-text-col mvv-text-left">
+                    <div class="mvv-content">
+                        <div class="mvv-header-inline">
+                            <h2>Vision</h2>
+                        </div>
+                        <p>To be the global leader in precision engineering, recognized for innovation, reliability, and customer-centricity in the automotive, railway, and aerospace sectors. We envision a future where UC Industries is the trusted partner for critical components that power industries worldwide.</p>
+                        <p>We aspire to set new standards in precision manufacturing, leveraging advanced technology and human expertise to create solutions that drive progress and sustainability across all industries we serve.</p>
+                    </div>
+                </div>
+
+                <!-- Icon Box Right -->
+                <div class="col-lg-6 mvv-image-col mvv-image-right">
+                    <div class="mvv-feature-box mvv-feature-vision">
+                        <i class="fa-solid fa-telescope"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="mvv-values-row">
+                <div class="container">
+                    <div class="mvv-values-header">
+                        <span class="mvv-values-label">CORE VALUES</span>
+                        <h2>Principles That <span class="mvv-guide">Guide Us</span></h2>
+                    </div>
+
+                    <div class="mvv-values-grid">
+                        <div class="mvv-value-item">
+                            <div class="mvv-value-number">01</div>
+                            <div class="mvv-value-icon-box">
+                                <i class="fa-solid fa-crosshairs"></i>
+                            </div>
+                            <h3>Precision</h3>
+                            <p>Maintaining tight tolerances and dimensional accuracy in every component we manufacture.</p>
+                        </div>
+
+                        <div class="mvv-value-item">
+                            <div class="mvv-value-number">02</div>
+                            <div class="mvv-value-icon-box">
+                                <i class="fa-solid fa-shield"></i>
+                            </div>
+                            <h3>Integrity</h3>
+                            <p>Operating with transparency, honesty, and accountability in all our business relationships.</p>
+                        </div>
+
+                        <div class="mvv-value-item">
+                            <div class="mvv-value-number">03</div>
+                            <div class="mvv-value-icon-box">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <h3>Quality Discipline</h3>
+                            <p>Following certified quality management systems and rigorous inspection protocols consistently.</p>
+                        </div>
+
+                        <div class="mvv-value-item">
+                            <div class="mvv-value-number">04</div>
+                            <div class="mvv-value-icon-box">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                            </div>
+                            <h3>Continuous Improvement</h3>
+                            <p>Investing in technology, training, and process optimization to enhance our capabilities.</p>
+                        </div>
+
+                        <div class="mvv-value-item">
+                            <div class="mvv-value-number">05</div>
+                            <div class="mvv-value-icon-box">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <h3>Teamwork</h3>
+                            <p>Fostering collaboration and skill development across our workforce of 120+ professionals.</p>
+                        </div>
+
+                        <div class="mvv-value-item">
+                            <div class="mvv-value-number">06</div>
+                            <div class="mvv-value-icon-box">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <h3>Customer Focus</h3>
+                            <p>Understanding customer requirements and delivering solutions that meet their specifications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="why-choose-header">
+                <span class="why-choose-label">WHY CHOOSE US</span>
+                <h2>Why <span class="orange-color">UC Industries</span> <br>Stands Apart</h2>
+                <p>Industry-leading precision engineering backed by 40+ years of expertise, proven quality, and customer-centric solutions</p>
+            </div>
+
+            <div class="why-choose-grid">
+                <div class="why-choose-card">
+                    <div class="why-choose-number">01</div>
+                    <div class="why-choose-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3>Advanced Technology</h3>
+                    <p>State-of-the-art CNC machinery equipped with latest automation and precision measurement systems ensuring micron-level accuracy.</p>
+                    <div class="why-choose-accent"></div>
+                </div>
+
+                <div class="why-choose-card">
+                    <div class="why-choose-number">02</div>
+                    <div class="why-choose-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Expert Workforce</h3>
+                    <p>120+ skilled engineers and technicians with decades of combined experience in precision engineering and quality assurance.</p>
+                    <div class="why-choose-accent"></div>
+                </div>
+
+                <div class="why-choose-card">
+                    <div class="why-choose-number">03</div>
+                    <div class="why-choose-icon">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Stringent quality checks at every stage, IATF 16949 certified, and 100% traceability on all components manufactured.</p>
+                    <div class="why-choose-accent"></div>
+                </div>
+
+                <div class="why-choose-card">
+                    <div class="why-choose-number">04</div>
+                    <div class="why-choose-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>Committed to environmentally responsible manufacturing practices and continuous improvement in resource efficiency globally.</p>
+                    <div class="why-choose-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Awards - Unified Timeline -->
+    <section class="certifications-section">
+        <div class="certifications-container">
+            <div class="timeline-header">
+                <span class="timeline-label">COMPANY JOURNEY</span>
+                <h2>Our <span class="timeline-highlight">Timeline</span></h2>
+            </div>
+
+            <div class="timeline-wrapper">
+                <!-- Left Timeline -->
+                <div class="timeline-left">
+                    <div class="timeline-year-display" id="yearDisplay">1980</div>
+                    <div class="timeline-vertical-line"></div>
+                    <div class="timeline-years" id="yearsContainer">
+                        <!-- Years will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="timeline-right">
+                    <div class="timeline-content-wrapper" id="contentWrapper">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Capabilities Section -->
+    <section class="quality-capabilities-section">
+        <div class="container">
+            <div class="quality-header">
+                <span class="quality-label">QUALITY & CAPABILITIES</span>
+                <h2>Our <span class="quality-highlight">Commitment</span></h2>
+            </div>
+
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <div class="quality-icon-box">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <h3>Quality Management Systems</h3>
+                    <p>We maintain IATF 16949:2016 and ISO 9001:2015 certified quality management systems that ensure consistent adherence to international standards across all manufacturing processes.</p>
+                </div>
+
+                <div class="quality-item">
+                    <div class="quality-icon-box">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <h3>Inspection & Measurement</h3>
+                    <p>In-house inspection capabilities with calibrated measurement equipment ensure dimensional accuracy and compliance with customer specifications at every stage of production.</p>
+                </div>
+
+                <div class="quality-item">
+                    <div class="quality-icon-box">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <h3>Process Control</h3>
+                    <p>Structured manufacturing practices with documented procedures, work instructions, and process parameters that maintain consistency and traceability throughout production.</p>
+                </div>
+
+                <div class="quality-item">
+                    <div class="quality-icon-box">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3>Precision Machining Capability</h3>
+                    <p>Advanced CNC turning and VMC machining capabilities enable us to achieve tight tolerances and complex geometries required for automotive and industrial applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-images">
+                <div class="cta-image-card cta-card-1">
+                    <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2026/01/Turned.-Machined-Components-copy.webp" alt="Precision Manufacturing">
+                </div>
+                <div class="cta-image-card cta-card-2">
+                    <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2026/01/Casting-and-Machined-copy-2.webp" alt="Quality Check">
+                </div>
+                <div class="cta-image-card cta-card-3">
+                    <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2026/01/Forged-and-Machined-copy.webp" alt="Manufacturing Process">
+                </div>
+            </div>
+
+            <div class="cta-content">
+                <h2>Can't find the perfect part?<br>Our <span class="cta-highlight">technical specialists</span><br>will help you find the right<br>solution for <span class="cta-highlight">you.</span></h2>
+                <a href="https://nextstep.net.in/Uc-industries/contact-us/" class="cta-button">CONSULT US</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2025/06/UC-Industries-Company-Profile-v1-2-1.png" alt="UC Industries" height="50" class="mb-2">
+                    <p class="small">PRECISION AT EVERY TURN</p>
+                </div>
+
+                <div class="col-md-2">
+                    <h6 class="text-uppercase fw-bold mb-3">Information</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about-us.html" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Our Facilities</a></li>
+                        <li><a href="#" class="footer-link">Quality</a></li>
+                        <li><a href="#" class="footer-link">Clients</a></li>
+                        <li><a href="#" class="footer-link">Career</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2">
+                    <h6 class="text-uppercase fw-bold mb-3">Products</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Automotive</a></li>
+                        <li><a href="#" class="footer-link">Railway</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="text-uppercase fw-bold mb-3">Let's Connect</h6>
+                    <address class="small">
+                        267 ND Block, Dabua-Pali Road,<br>
+                        Dabua Colony NIT, Faridabad HR 121001<br><br>
+                        +91 XXX XXX XXXX<br>
+                        info@ucindustries.com
+                    </address>
+                </div>
+            </div>
+
+            <div class="footer_bottom">
+                <div class="privacy_text">
+                    <small>&copy; Copyright 2024 UC Industries Pvt. Ltd. All Rights Reserved.
+                        <a href="#" class="privacy_link">Privacy Policy</a>
+                    </small>
+                </div>
+                <div class="footer_bottom_right_link">
+                    <div class="made_in_india_box">
+                        <img src="https://nextstep.net.in/Uc-industries/wp-content/uploads/2026/01/Make_In_India.png" alt="madeinindialogo">
+                    </div>
+
+                    <div class="social_link">
+                        <ul>
+                            <li>
+                                <div class="social_icon_box">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="social_icon_box">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id='glt-footer'></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("scroll", function() {
+            const header = document.querySelector(".sticky_header");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+    <script>
+        // Dynamic Timeline Data
+        const timelineData = [
+            {
+                year: 1980,
+                title: '1980s: Foundation',
+                description: 'UC Industries began as a small machining workshop focused on precision and craftsmanship.',
+                highlights: [
+                    { label: 'Phase', value: 'Workshop establishment' },
+                    { label: 'Focus', value: 'Precision & craftsmanship' }
+                ]
+            },
+            {
+                year: 1990,
+                title: '1990s: Growth',
+                description: 'Steady growth through consistent quality and customer trust, establishing ourselves as a reliable precision engineering partner.',
+                highlights: [
+                    { label: 'Achievement', value: 'Steady growth' },
+                    { label: 'Driver', value: 'Quality & trust' }
+                ]
+            },
+            {
+                year: 2000,
+                title: '2000s: Transformation',
+                description: 'Transition from a workshop to structured manufacturing practices with systematic quality management.',
+                highlights: [
+                    { label: 'Evolution', value: 'Workshop to factory' },
+                    { label: 'Practice', value: 'Structured manufacturing' }
+                ]
+            },
+            {
+                year: 2016,
+                title: '2016: Major Milestone & Certifications',
+                description: 'Major milestone achieved with IATF 16949:2016 and ISO 9001:2015 certifications, establishing automotive-grade quality standards and manufacturing excellence.',
+                highlights: [
+                    { label: 'IATF 16949:2016', value: 'Automotive certified' },
+                    { label: 'ISO 9001:2015', value: 'Quality management' }
+                ]
+            },
+            {
+                year: 2017,
+                title: '2017: Flow Transformation Excellence',
+                description: 'Flow Transformation Excellence Award from Padmini VNA, recognizing our commitment to process optimization and manufacturing efficiency.',
+                highlights: [
+                    { label: 'Awarded by', value: 'Padmini VNA' },
+                    { label: 'Recognition', value: 'Excellence in transformation' }
+                ]
+            },
+            {
+                year: 2019,
+                title: '2019: Multiple Achievements',
+                description: 'Supplier Meet Award and Support in Development Award from Padmini VNA. Recognized as Direct Online Supplier by Hero Honda for reliability and quality.',
+                highlights: [
+                    { label: 'Supplier Meet Award', value: 'Padmini VNA' },
+                    { label: 'Development Award', value: 'Padmini VNA' },
+                    { label: 'Hero Honda', value: 'Direct online supplier' }
+                ]
+            },
+            {
+                year: 2024,
+                title: '2024: Present & Future',
+                description: 'Two manufacturing facilities spanning 12,000+ square feet with 120+ employees. Recognized with Quality Month Celebration Award from Kubota for sustained commitment to quality excellence.',
+                highlights: [
+                    { label: 'Facilities', value: '2 modern plants' },
+                    { label: 'Workforce', value: '120+ skilled employees' },
+                    { label: 'Kubota Award', value: 'Quality excellence' }
+                ]
+            }
+        ];
+
+        // Initialize Timeline
+        let currentYear = 1980;
+
+        function initTimeline() {
+            renderYears();
+            renderContent();
+        }
+
+        function renderYears() {
+            const container = document.getElementById('yearsContainer');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            timelineData.forEach(item => {
+                const yearDiv = document.createElement('div');
+                yearDiv.className = 'timeline-year-item' + (item.year === currentYear ? ' active' : '');
+                yearDiv.textContent = item.year;
+                yearDiv.addEventListener('click', function() {
+                    selectYear(item.year);
+                });
+                container.appendChild(yearDiv);
+            });
+        }
+
+        function renderContent() {
+            const wrapper = document.getElementById('contentWrapper');
+            if (!wrapper) return;
+            wrapper.innerHTML = '';
+            
+            const item = timelineData.find(d => d.year === currentYear);
+            if (item) {
+                const yearDisplay = document.getElementById('yearDisplay');
+                if (yearDisplay) yearDisplay.textContent = item.year;
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'timeline-content-item active';
+                
+                let highlightsHTML = '';
+                if (item.highlights && item.highlights.length > 0) {
+                    highlightsHTML = '<div class="timeline-item-highlights">';
+                    item.highlights.forEach(h => {
+                        highlightsHTML += `<div class="highlight-box"><h4>${h.label}</h4><p>${h.value}</p></div>`;
+                    });
+                    highlightsHTML += '</div>';
+                }
+                
+                contentDiv.innerHTML = `
+                    <h3 class="timeline-item-title">${item.title}</h3>
+                    <p class="timeline-item-description">${item.description}</p>
+                    ${highlightsHTML}
+                `;
+                wrapper.appendChild(contentDiv);
+            }
+        }
+
+        function selectYear(year) {
+            currentYear = year;
+            renderYears();
+            renderContent();
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTimeline);
+        } else {
+            initTimeline();
+        }
+    </script>
+
+    <script>
+        // Smooth scroll animations for timeline items
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling to links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Page fade in animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+
+</body>
+
+</html>
