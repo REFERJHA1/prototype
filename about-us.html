@@ -1676,6 +1676,216 @@
                 line-height: 1.4;
             }
         }
+
+        /* Layout normalization shared across pages */
+        :root {
+            --page-max: 1180px;
+            --gutter: clamp(1rem, 3vw, 2.25rem);
+            --section-pad: clamp(2.75rem, 5vw, 4.5rem);
+            --section-pad-lg: clamp(3.25rem, 6vw, 5.75rem);
+        }
+
+        body {
+            font-family: 'Space Grotesk', 'Open Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        .container,
+        .container-fluid,
+        .certifications-container,
+        .cta-container {
+            width: 100%;
+            max-width: var(--page-max);
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: var(--gutter);
+            padding-right: var(--gutter);
+        }
+
+        section {
+            padding: var(--section-pad) 0;
+        }
+
+        .hero-video-banner .container-fluid,
+        .about-hero-section .container {
+            max-width: var(--page-max);
+        }
+
+        .hero-video-banner {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-video-banner h1 {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.1;
+        }
+
+        .hero-video-banner p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            max-width: 48rem;
+        }
+
+        .about-hero-section {
+            padding: clamp(3rem, 6vw, 5rem) 0;
+        }
+
+        .about-hero-section h1 {
+            font-size: clamp(2.6rem, 6vw, 4rem);
+            line-height: 1.15;
+        }
+
+        .about-hero-section p {
+            font-size: clamp(1rem, 2.6vw, 1.1rem);
+        }
+
+        .who-we-are-section,
+        .why-choose-section,
+        .quality-capabilities-section,
+        .certifications-section,
+        .cta-section,
+        .stats-section,
+        .mvv-values-row,
+        .journey-section,
+        .team-section,
+        .history-awards-section {
+            padding: var(--section-pad-lg) 0;
+        }
+
+        .who-we-are-content {
+            max-width: 960px;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: clamp(1.25rem, 3vw, 2.5rem);
+        }
+
+        .mvv-values-grid,
+        .why-choose-grid,
+        .quality-grid,
+        .timeline-item-highlights {
+            gap: clamp(1.25rem, 3vw, 2.5rem);
+        }
+
+        .quality-grid {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .mvv-feature-box {
+            width: clamp(220px, 32vw, 280px);
+            height: clamp(220px, 32vw, 280px);
+        }
+
+        .cta-container {
+            gap: clamp(1.75rem, 4vw, 3.5rem);
+        }
+
+        .cta-images {
+            width: min(420px, 90vw);
+            aspect-ratio: 4 / 3;
+            height: auto;
+        }
+
+        .cta-image-card {
+            width: 42%;
+            max-width: 200px;
+            aspect-ratio: 9 / 11;
+            height: auto;
+        }
+
+        .cta-card-2 {
+            width: 46%;
+            max-width: 220px;
+        }
+
+        .certifications-section,
+        .combined-timeline,
+        .timeline-wrapper {
+            overflow-x: hidden;
+        }
+
+        .timeline-wrapper {
+            gap: clamp(1.5rem, 4vw, 3.5rem);
+        }
+
+        .timeline-left {
+            flex: 0 0 clamp(220px, 28vw, 280px);
+        }
+
+        .timeline-content {
+            max-width: min(540px, 100%);
+        }
+
+        .timeline-year-display {
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+        }
+
+        .timeline-item {
+            padding-inline: clamp(1rem, 5vw, 2.5rem);
+        }
+
+        .team-image {
+            width: clamp(180px, 40vw, 250px);
+            height: auto;
+            aspect-ratio: 1 / 1;
+        }
+
+        @media (max-width: 991.98px) {
+            .hero-video-banner {
+                min-height: 70vh;
+            }
+
+            .timeline-wrapper {
+                flex-direction: column;
+            }
+
+            .timeline-left {
+                width: 100%;
+            }
+
+            .combined-timeline::before {
+                left: 24px;
+                transform: none;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: clamp(3rem, 8vw, 4.5rem);
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            :root {
+                --gutter: 1rem;
+            }
+
+            .about-hero-section h1 {
+                font-size: clamp(2.2rem, 8vw, 2.6rem);
+            }
+
+            .hero-video-banner h1 {
+                font-size: clamp(2rem, 8vw, 2.6rem);
+            }
+
+            .who-we-are-section h2,
+            .why-choose-header h2,
+            .quality-header h2,
+            .timeline-header h2,
+            .main_heading h2 {
+                font-size: clamp(1.6rem, 6vw, 2.1rem);
+            }
+
+            .cta-container {
+                justify-content: center;
+            }
+
+            .timeline-item {
+                padding-left: clamp(2.5rem, 7vw, 3.5rem);
+            }
+        }
     </style>
 </head>
 
